@@ -3,13 +3,13 @@ package org.iut.refactoring.refactoring;
 import java.util.UUID;
 
 public class ChefDeProjet extends EmployeLongTerme{
-    public ChefDeProjet(String name, double salary, int exp) {
-        super(name,salary,exp);
+    public ChefDeProjet(String name, double salary, int exp,String equipe) {
+        super(name,salary,exp,equipe);
         this.setSalaire(calculSalaire(salary));
         this.setBonus(calculBonusAnnuel());
     }
-    public ChefDeProjet(UUID id,String name, double salary, int exp) {
-        super(id,name,salary,exp);
+    public ChefDeProjet(UUID id,String name, double salary, int exp,String equipe) {
+        super(id,name,salary,exp,equipe);
         this.setSalaire(calculSalaire(salary));
         this.setBonus(calculBonusAnnuel());
     }
