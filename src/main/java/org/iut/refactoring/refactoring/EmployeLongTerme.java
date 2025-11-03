@@ -4,8 +4,11 @@ import java.util.UUID;
 
 public abstract class EmployeLongTerme extends Employe{
     double bonus;
-    public EmployeLongTerme(String name, int exp) {
-        super(name,exp);
+    public EmployeLongTerme(String name,double salaire, int exp) {
+        super(name,salaire,exp);
+    }
+    public EmployeLongTerme(UUID id,String name,double salaire, int exp) {
+        super(id,name,salaire,exp);
     }
     public double getBonus() {
         return bonus;

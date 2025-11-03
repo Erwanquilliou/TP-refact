@@ -1,11 +1,19 @@
 package org.iut.refactoring.refactoring;
 
+import java.util.UUID;
+
 public class Developpeur extends EmployeLongTerme{
     public Developpeur(String name,double salaire,int exp){
-        super(name,exp);
+        super(name,salaire,exp);
         this.setSalaire(calculSalaire(salaire));
         this.setBonus(calculBonusAnnuel());
     }
+    public Developpeur(UUID id,String name, double salaire, int exp){
+        super(id,name,salaire,exp);
+        this.setSalaire(calculSalaire(salaire));
+        this.setBonus(calculBonusAnnuel());
+    }
+
     @Override
     public double calculSalaire(double salaireDeBase) {
         if(this.getExperience() <=5) {
@@ -22,9 +30,9 @@ public class Developpeur extends EmployeLongTerme{
     @Override
     public double calculBonusAnnuel(){
         if(this.getExperience()<=5){
-            return this.getSalaire()*0.1;
+            return this.getSalaireDeBase()*0.1;
         }else{
-            return this.getSalaire()*0.1*1.5;
+            return this.getSalaireDeBase()*0.1*1.5;
         }
     }
 }

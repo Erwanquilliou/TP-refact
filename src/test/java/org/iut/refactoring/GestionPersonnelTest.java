@@ -22,7 +22,7 @@ public class GestionPersonnelTest {
     @DisplayName("test calculer salaire Dev")
     void test2() {
         app.ajouteSalarie("DEVELOPPEUR", "Alice", 50000, 0, "IT");
-        String id = (String) app.employes.get(0)[0];
+        String id =app.employes.get(0).getId().toString();
         assertThat(app.calculSalaire(id)).isEqualTo(60000);
     }
 
@@ -30,7 +30,7 @@ public class GestionPersonnelTest {
     @DisplayName("test calculer salaire stagiaire")
     void test3() {
         app.ajouteSalarie("STAGIAIRE", "Alice", 50000, 0, "IT");
-        String id = (String) app.employes.get(0)[0];
+        String id = app.employes.get(0).getId().toString();
         assertThat(app.calculSalaire(id)).isEqualTo(30000);
     }
 
@@ -41,8 +41,8 @@ public class GestionPersonnelTest {
         app.ajouteSalarie("DEVELOPPEUR", "Alice", 50000, 6, "IT");
 
         // la structure va changer
-        String id = (String) app.employes.get(0)[0];
-        String id2 = (String) app.employes.get(1)[0];
+        String id =app.employes.get(0).getId().toString();
+        String id2 =app.employes.get(1).getId().toString();
         assertThat(app.calculSalaire(id)).isEqualTo((60000*1.15*1.05));
         assertThat(app.calculSalaire(id2)).isEqualTo((60000*1.15));
     }
@@ -51,8 +51,8 @@ public class GestionPersonnelTest {
     void test5() {
         app.ajouteSalarie("CHEF DE PROJET", "Alice", 50000, 0,"IT");
         app.ajouteSalarie("CHEF DE PROJET", "Alice", 50000, 6, "IT");
-        String id = (String) app.employes.get(0)[0];
-        String id2 = (String) app.employes.get(1)[0];
+        String id =app.employes.get(0).getId().toString();
+        String id2 =app.employes.get(1).getId().toString();
         assertThat(app.calculSalaire(id)).isEqualTo((50000*1.5+5000));
         assertThat(app.calculSalaire(id2)).isEqualTo((50000*1.5*1.1+5000));
     }
@@ -61,7 +61,7 @@ public class GestionPersonnelTest {
     @DisplayName("test calcul salaire avancement métier")
     void test6() {
         app.ajouteSalarie("CHEF DE PROJET", "Alice", 50000, 0,"IT");
-        String id = (String) app.employes.get(0)[0];
+        String id =app.employes.get(0).getId().toString();
         app.avancementEmploye(id,"STAGIAIRE");
         assertThat(app.calculSalaire(id)).isEqualTo((50000*0.6));
     }
@@ -70,8 +70,8 @@ public class GestionPersonnelTest {
     void test7() {
         app.ajouteSalarie("DEVELOPPEUR", "Alice", 50000, 0,"IT");
         app.ajouteSalarie("DEVELOPPEUR", "Alice", 50000, 6,"IT");
-        String id = (String) app.employes.get(0)[0];
-        String id2 = (String) app.employes.get(1)[0];
+        String id =app.employes.get(0).getId().toString();
+        String id2 =app.employes.get(1).getId().toString();
         assertThat(app.calculBonusAnnuel(id)).isEqualTo((50000*0.1));
         assertThat(app.calculBonusAnnuel(id2)).isEqualTo(((50000*0.1)*1.5));
     }
@@ -80,8 +80,8 @@ public class GestionPersonnelTest {
     void test8() {
         app.ajouteSalarie("CHEF DE PROJET", "Alice", 50000, 0,"IT");
         app.ajouteSalarie("CHEF DE PROJET", "Alice", 50000, 4,"IT");
-        String id = (String) app.employes.get(0)[0];
-        String id2 = (String) app.employes.get(1)[0];
+        String id =app.employes.get(0).getId().toString();
+        String id2 =app.employes.get(1).getId().toString();
         assertThat(app.calculBonusAnnuel(id)).isEqualTo((50000*0.2));
         assertThat(app.calculBonusAnnuel(id2)).isEqualTo(((50000*0.2)*1.3));
     }
@@ -90,8 +90,8 @@ public class GestionPersonnelTest {
     void test9() {
         app.ajouteSalarie("STAGIAIRE", "Alice", 50000, 0,"IT");
         app.ajouteSalarie("STAGIAIRE", "Alice", 50000, 4,"IT");
-        String id = (String) app.employes.get(0)[0];
-        String id2 = (String) app.employes.get(1)[0];
+        String id =app.employes.get(0).getId().toString();
+        String id2 =app.employes.get(1).getId().toString();
         assertThat(app.calculBonusAnnuel(id)).isEqualTo(0);
         assertThat(app.calculBonusAnnuel(id2)).isEqualTo(0);
     }

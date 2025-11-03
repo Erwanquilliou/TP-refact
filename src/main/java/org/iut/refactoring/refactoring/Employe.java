@@ -6,13 +6,22 @@ public abstract class Employe {
     private UUID id;
     private String nom;
     private double salaire;
+    private double salaireDeBase;
     private int experience;
 
-    public Employe(String nom, int experience) {
+    public Employe(String nom,double salaireDeBase, int experience) {
         this.id =  UUID.randomUUID();
         this.nom = nom;
+        this.salaireDeBase = salaireDeBase;
         this.experience = experience;
     }
+    public Employe(UUID id, String nom,double salaireDeBase, int experience) {
+        this.id = id;
+        this.nom = nom;
+        this.salaireDeBase = salaireDeBase;
+        this.experience = experience;
+    }
+
     public abstract double calculSalaire(double salaireDeBase);
     public double getSalaire() {
         return salaire;
@@ -28,6 +37,9 @@ public abstract class Employe {
     }
     public void setSalaire(double salaire) {
         this.salaire = salaire;
+    }
+    public double getSalaireDeBase() {
+        return salaireDeBase;
     }
 
 
