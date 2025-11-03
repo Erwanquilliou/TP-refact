@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="assertj.vavr" type="repository">
+    <properties maven-id="org.assertj:assertj-vavr:0.4.3" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/assertj/assertj-vavr/0.4.3/assertj-vavr-0.4.3.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/assertj/assertj-core/3.24.2/assertj-core-3.24.2.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/net/bytebuddy/byte-buddy/1.12.21/byte-buddy-1.12.21.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/io/vavr/vavr/0.10.4/vavr-0.10.4.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/io/vavr/vavr-match/0.10.4/vavr-match-0.10.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

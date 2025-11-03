@@ -20,7 +20,7 @@ public class GestionPersonnel {
         // Faire une classe employé pour plus de clarté et de maîtrise
 
         employes.add(emp);
-        // faire une classe équipe et pas une simple liste d'employés
+
 
         double salaireFinal = salaireDeBase;
         if (type.equals("DEVELOPPEUR")) {
@@ -40,7 +40,8 @@ public class GestionPersonnel {
         // qui auraient directement toutes les infos de la catégorie d'employé.
 
         salairesEmployes.put((String)emp[0], salaireFinal);
-
+        //cette méthode fait trop de chose, ajoute un employé et ajout son salaire dans une map qui n'est même pas
+        //utilisé
         logs.add(LocalDateTime.now() + " - Ajout de l'employé: " + nom);
     }
 
